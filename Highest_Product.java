@@ -1,5 +1,7 @@
 // Given a list_of_ints, find the highest_product you can get from three of the integers.
 // The input list_of_ints will always have at least three integers.
+// Generall practice programmers solve this problem by using sorting but sorting algo usually have O(nlogn) complexity
+// Here i have tried to solve this problem using O(n) and O(1) space complexity
 public class Highest_Product {
 	public static Integer HighestProduct(int arr[]) {
 			if((arr==null)||(arr.length<3)) {
@@ -50,7 +52,7 @@ public class Highest_Product {
 		return new int[]{max1,max2,max3,min1,min2};
 	 }
 	public static void main(String[] args) {
-    // Test Cases
+		 // Test Cases
 		int arr[] = new int[]{1,-1,0,3,-2,3,0,-2,7};
 		int arr1[] = new int[]{1,-1,1,7,-2,3,222,-2,3};
 		int arr2[] = new int[]{1,-1,-11,3,-2,13,2,-2,3};
