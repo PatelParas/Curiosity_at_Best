@@ -1,13 +1,13 @@
 # Simple Linux Interview Questions:</a>
 * What is the name and the UID of the administrator user?
-	```shell
+```shell
 	root# echo $UID
 	0
 	root# cat /etc/passwd | grep ^root
 	root:*:0:0:System Administrator:/var/root:/bin/sh
-	```
+```
 * How to list all files, including hidden ones, in a directory?
-	```shell
+```shell
 	$ ls -la ./
 	total 4656
 	drwxr-xr-x@ 19 paras.patel	679754705			646 Aug 16 19:11 .
@@ -16,13 +16,13 @@
 	-rw-r--r--	 1 paras.patel	679754705			268 Apr 19 16:18 .dockeralias
 	-r--------@	1 paras.patel	679754705		 1696 Jan 16 Prog_Practice
 	drwxr-xr-x	 8 paras.patel	679754705			272 Apr 26 13:59 Dockerfile
-	```
+```
 * What is the Unix/Linux command to remove a directory and its contents?
-	```shell
+```shell
 	$ rm -r	$file_directory_path
-	```
+```
 * Which command will show you free/used memory? Does free memory exist on Linux?
-	```shell
+```shell
 	$cat /proc/meminfo
 	MemTotal:				8120568 kB
 	MemFree:				 2298932 kB
@@ -37,28 +37,28 @@
 	Swap:					956					0				956
 	$ top
 	$ htop #also useful to check memory usage try it by yourself
-	```
+```
 * How to search for the string "my konfi is the best" in files of a directory recursively?
-	```shell
+```shell
 	grep -r "my konfi is the best" ./
-	```
+```
 * How to connect to a remote server or what is SSH?
-	```shell
+```shell
 	$ ssh remote_username@remote_host
-	```
+```
 * How to get all environment variables and how can you use them?
-	```shell
+```shell
 	$ env # will list all environmental variables
 	$ echo $SHELL	# $SHELL is system variables
 	/bin/bash
-	```
+```
 * I get "command not found" when I run ```ifconfig -a```. What can be wrong?
-	```shell
+```shell
 	# if system is windows you need to use ipconfig some time $PATH variable missing ifconfig PATH
 	$ /sbin/ifconfig
-	```
+```
 * What happens if I type TAB-TAB?
-	```shell
+```shell
 	# [TAB]-[TAB] is also know as tab completion is common feature of command line interpreters in which the program automatically fills in partially typed commands. It behaves according to command in prefix.
 	e.g.
 	$ write [TAB][TAB]
@@ -69,9 +69,9 @@
 
 	$ telnet [TAB][TAB]
 	localhost	dev-db	fileserver
-	```
+```
 * What command will show the available disk space on the Unix/Linux system?
-	```shell
+```shell
 	# df command use to check disk space
 	$ df -h
 	Filesystem			Size	 Used	Avail Capacity	iused		ifree %iused	Mounted on
@@ -132,9 +132,9 @@
 	$ vmstat -s
 	$ top
 	$ htop
-	```
+```
 * What commands do you know that can be used to check DNS records?
-	```shell
+```shell
 	$ nslookup www.google.com
 	Server:		172.20.10.1
 	Address:	172.20.10.1#53
@@ -182,29 +182,29 @@
 	# Find out start of authority (SOA) record which is information stored in a domain
 	$ host -t soa github.com
 	github.com has SOA record ns1.p16.dynect.net. hostmaster.github.com. 1472666705 3600 600 604800 60
-	```
+```
 * What Unix/Linux commands will alter a files ownership, files permissions?
-	```shell
+```shell
 	$ chown options owner-user:owner-group file/directory
-	```
+```
 * What does ```chmod +x FILENAME```do?
 		* ``+x`` means we are adding file execution permission for all user, group and others
 * What does the permission 0750 on a file mean? or What does the permission 0750 on a directory mean?
-		```
-		->	1st bit(0) sticky-bit (This bit is commonly set to directories and means that you may only remove file in such a directory that are owned by you. The filesystem /tmp is commonly set with that bit)
+```
+	->	1st bit(0) sticky-bit (This bit is commonly set to directories and means that you may only remove file in such a directory that are owned by you. The filesystem /tmp is commonly set with that bit)
 	->	2nd bit(7) file-owner may read(4) + write(2) + execute(1) file
 	->	3rd bit(5) file-group may read(4) and execute(1) file
 	->	4th bit(0) other-user can't do anything with this file
-	```
+```
 * How to add a new system user without login permissions?
-	```shell
+```shell
 	# create system user without home directory
 	$ adduser --system --no-create-home
-	```
+```
 * How to add/remove a group from a user?
-	```shell
+```shell
 	$ usermod -G "" username
-	```
+```
 * What is a bash alias?
 	* Bash allows us to create our own shortcuts and time-savers through the use of aliases and shell functions. e.g. ```$ alias alias_name="command_to_run"```
 * How do you set the mail address of the root/a user?
@@ -215,7 +215,7 @@
 	* The configuration file /etc/services maps port numbers to named services. Key point: Its role in life is so that programs can do a ```getportbyname()``` sockets call in their code in order to get what port they should use.
 * How to redirect STDOUT and STDERR in bash? (> /dev/null 2>&1)
 	* The file descriptors for stdin, stdout, and stderr are 0, 1, and 2, respectively.
-		```shell
+	```shell
 			1>filename
 			# Redirect stdout to file "filename."
 			1>>filename
@@ -228,7 +228,7 @@
 			# Redirect both stdout and stderr to file "filename."
 			2>&1
 			# Redirects stderr to stdout.
-		```
+	```
 * What is the difference between UNIX and Linux.
 	* Linux is an open source, free to use operating system widely used for computer hardware and software, game development, tablet PCS, mainframes etc. Unix is an operating system commonly used in internet servers, workstations and PCs by Solaris, Intel, HP etc.
 	*	Linux kernel is developed by the community. Linus Torvalds oversees things. hree bigest distributions are Solaris (Oracle), AIX (IBM) & HP-UX Hewlett Packard. And Apple Makes OSX, an unix based os.
@@ -257,8 +257,8 @@
 	```
 * Can you name a lower-case letter that is not a valid option for GNU ```ls```?
 	* lower-case letter ```z``` is not a valid option for GNU e.g.
-		```shell
-		$ ls -z
-		ls: illegal option -- z
-		usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]
-		```
+	```shell
+	$ ls -z
+	ls: illegal option -- z
+	usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]
+	```
